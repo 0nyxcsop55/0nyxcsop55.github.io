@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="intro">
+        <div class="container">
+          <h1>Mi Linea de Tiempo &darr;</h1>
+          <div>
+            <p>
+              hallazgos
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="timeline">
+        <ul>
+          <li>
+            <a href="simple_triage.html">
+              <div>
+                <time>Simple_triage</time>Una herramienta simple y de fácil uso en los primeros pasos de un ciberincidente. Con una interfaz intuitiva, realiza un volcado de información relevante y concisa. Para identificar puntos de compromiso, además de facilitar el análisis forense básico, esta herramienta centrada en el usuario, agiliza la respuesta a ciberincidentes y fortalece la seguridad digital.
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <script>
+        (function () {
+  "use strict";
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+ function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+})();
+
+      </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
